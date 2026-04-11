@@ -1,12 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Infraestructura STF corregida'
+Description: 'Infraestructura STF corregida v2'
 
 Resources:
   ServidorDevOps:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: t2.micro
-      # AMI estándar de Ubuntu 22.04 en us-east-1
       ImageId: ami-080e1f13689e07408 
       IamInstanceProfile: LabInstanceProfile
       Tags:
@@ -16,4 +15,5 @@ Resources:
   BucketDatos:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Sub 'stf-datos-proyecto-'
+      # He cambiado el nombre por uno mas robusto
+      BucketName: !Sub 'stf-proyecto-devops-ale-data'
